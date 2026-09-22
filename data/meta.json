@@ -1,18 +1,23 @@
 {
-  "schema_version": 2,
-  "name": "星の鳥",
-  "subtitle": "Comet Orbit Database for Nicole",
-  "storage": "GitHub static JSON",
-  "updated_at": null,
-  "source": "JPL Small-Body Database",
-  "comet_count": 0,
-  "jpl_reported_count": null,
-  "detail_file_count": 0,
   "catalog_shards": 64,
-  "status": "not_initialized",
+  "comet_count": 4077,
+  "detail_file_count": 0,
+  "jpl_reported_count": 4077,
+  "last_update": {
+    "added": 4077,
+    "changed_files": 65,
+    "orbit_changed": 0,
+    "removed": 0
+  },
+  "name": "星の鳥",
   "paths": {
-    "search_index": "data/catalog/index.json",
     "catalog_shard_template": "data/catalog/{bucket}.json",
-    "detail_template": "data/comets/{bucket}/{spkid}.json"
-  }
+    "detail_template": "data/comets/{bucket}/{spkid}.json",
+    "search_index": "data/catalog/index.json"
+  },
+  "schema_version": 2,
+  "source": "JPL Small-Body Database",
+  "storage": "GitHub static JSON",
+  "subtitle": "Comet Orbit Database for Nicole",
+  "updated_at": "2026-09-22T20:51:25Z"
 }
