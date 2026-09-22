@@ -72,8 +72,20 @@ def main():
     CATALOG.mkdir(parents=True, exist_ok=True)
     COMETS.mkdir(parents=True, exist_ok=True)
 
-    old_index = load_json(CATALOG / "index.json", []) or []
-    old_map = {str(x.get("spkid")): x for x in old_index}
+    old_index_doc = load_json(CATALOG / "index.json", {}) or {}
+    if isinstance(old_index_doc, dict):
+        old_index = old_index_doc.get("records") or []
+    elif isinstance(old_index_doc, list):
+        # v1 compatibility / defensive fallback
+        old_index = old_index_doc
+    else:
+        old_index = []
+
+    old_map = {
+        str(x.get("spkid")): x
+        for x in old_index
+        if isinstance(x, dict) and x.get("spkid") is not None
+    }
 
     records, total = fetch_all(args.page_size)
     records.sort(key=lambda x: int(x["spkid"]) if x["spkid"].isdigit() else x["spkid"])
