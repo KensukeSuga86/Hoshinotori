@@ -1,0 +1,54 @@
+name: Fetch one comet detail
+
+on:
+  workflow_dispatch:
+    inputs:
+      spkid:
+        description: "JPL SPK-ID"
+        required: true
+        type: string
+
+permissions:
+  contents: write
+
+concurrency:
+  group: hoshinotori-detail-${{ inputs.spkid }}
+  cancel-in-progress: false
+
+jobs:
+  detail:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Fetch detail from JPL
+        run: python scripts/fetch_detail.py "${{ inputs.spkid }}"
+
+      - name: Refresh catalog index detail flags
+        run: python scripts/update_catalog.py --page-size 500
+
+      - name: Remove temporary diff file
+        run: rm -f data/.last_catalog_diff.json
+
+      - name: Commit only when JSON changed
+        shell: bash
+        run: |
+          if git diff --quiet -- data; then
+            echo "No data changes."
+            exit 0
+          fi
+
+          git config user.name "hoshinotori-bot"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          git add data
+          git commit -m "Add/update comet detail ${{ inputs.spkid }}"
+          git push
