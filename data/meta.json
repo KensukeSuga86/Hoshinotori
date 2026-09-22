@@ -1,0 +1,18 @@
+{
+  "schema_version": 2,
+  "name": "星の鳥",
+  "subtitle": "Comet Orbit Database for Nicole",
+  "storage": "GitHub static JSON",
+  "updated_at": null,
+  "source": "JPL Small-Body Database",
+  "comet_count": 0,
+  "jpl_reported_count": null,
+  "detail_file_count": 0,
+  "catalog_shards": 64,
+  "status": "not_initialized",
+  "paths": {
+    "search_index": "data/catalog/index.json",
+    "catalog_shard_template": "data/catalog/{bucket}.json",
+    "detail_template": "data/comets/{bucket}/{spkid}.json"
+  }
+}

@@ -1,0 +1,82 @@
+{
+  "schema_version": 2,
+  "catalog_index_record": {
+    "spkid": "string",
+    "bucket": "00..3f",
+    "designation": "string|null",
+    "full_name": "string|null",
+    "name": "string|null",
+    "prefix": "string|null",
+    "kind": "string|null",
+    "class": "string|null",
+    "orbit_id": "string|null",
+    "epoch": "number|null",
+    "detail": "boolean"
+  },
+  "catalog_record": {
+    "identity": [
+      "spkid",
+      "pdes",
+      "full_name",
+      "name",
+      "prefix",
+      "kind",
+      "class"
+    ],
+    "solution": [
+      "orbit_id",
+      "epoch",
+      "equinox",
+      "source",
+      "soln_date",
+      "producer"
+    ],
+    "elements": [
+      "e",
+      "a",
+      "q",
+      "i",
+      "om",
+      "w",
+      "ma",
+      "tp",
+      "per",
+      "n",
+      "ad"
+    ],
+    "sigmas": [
+      "sigma_e",
+      "sigma_a",
+      "sigma_q",
+      "sigma_i",
+      "sigma_om",
+      "sigma_w",
+      "sigma_ma",
+      "sigma_tp",
+      "sigma_per",
+      "sigma_n",
+      "sigma_ad"
+    ],
+    "quality": [
+      "data_arc",
+      "first_obs",
+      "last_obs",
+      "n_obs_used",
+      "condition_code",
+      "rms",
+      "two_body",
+      "t_jup",
+      "moid",
+      "moid_jup"
+    ]
+  },
+  "detail_record": {
+    "identity": "object",
+    "orbit": {
+      "elements": "map keyed by element short name",
+      "model_parameters": "array",
+      "covariance": "JPL covariance object|null"
+    },
+    "physical_parameters": "array"
+  }
+}

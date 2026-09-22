@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>星の鳥 — Comet Orbit Database for Nicole</title>
+<style>
+:root{color-scheme:dark}
+*{box-sizing:border-box}
+body{
+  margin:0;background:#050b13;color:#d7e8f5;
+  font-family:-apple-system,BlinkMacSystemFont,"Helvetica Neue","Hiragino Sans","Yu Gothic",sans-serif
+}
+main{width:min(920px,calc(100% - 28px));margin:0 auto;padding:56px 0 80px}
+h1{font-family:"Trajan Pro 3","Trajan Pro","Trajan","Times New Roman",serif;font-weight:400;letter-spacing:.08em;margin:0;font-size:clamp(32px,6vw,62px)}
+.sub{color:#7394ad;margin-top:7px;letter-spacing:.08em}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:30px 0}
+.card{border:1px solid #183249;border-radius:12px;padding:15px;background:#091522}
+.label{font-size:11px;color:#64849e}.value{font-size:25px;margin-top:5px;color:#eaf6ff}
+.panel{border:1px solid #173148;border-radius:12px;background:#08121d;padding:16px;margin-top:12px}
+.panel h2{font-size:14px;margin:0 0 10px;color:#a8cbe3}
+code{color:#8bc8ef;word-break:break-all}
+.good{color:#8bd4ad}.wait{color:#d9bd78}.bad{color:#ef9b9b}
+small{color:#617f96}
+@media(max-width:700px){.grid{grid-template-columns:repeat(2,1fr)}main{padding-top:30px}}
+</style>
+</head>
+<body>
+<main>
+  <h1>星の鳥</h1>
+  <div class="sub">Comet Orbit Database for Nicole</div>
+
+  <div class="grid">
+    <div class="card"><div class="label">彗星</div><div class="value" id="comets">—</div></div>
+    <div class="card"><div class="label">詳細JSON</div><div class="value" id="details">—</div></div>
+    <div class="card"><div class="label">カタログ分割</div><div class="value" id="shards">—</div></div>
+    <div class="card"><div class="label">状態</div><div class="value" id="status">—</div></div>
+  </div>
+
+  <div class="panel">
+    <h2>最終更新</h2>
+    <div id="updated">読み込み中…</div>
+  </div>
+
+  <div class="panel">
+    <h2>Nicole 用エンドポイント</h2>
+    <div>検索インデックス<br><code id="indexUrl"></code></div>
+    <br>
+    <div>基本軌道シャード<br><code>data/catalog/{bucket}.json</code></div>
+    <br>
+    <div>詳細データ<br><code>data/comets/{bucket}/{spkid}.json</code></div>
+  </div>
+
+  <div class="panel">
+    <h2>データ源</h2>
+    <div>NASA/JPL Small-Body Database (SBDB)</div>
+    <small>星の鳥はJPLの公開データをNicole向けの静的JSONとして整理します。</small>
+  </div>
+</main>
+<script>
+(async()=>{
+  const $=id=>document.getElementById(id);
+  $("indexUrl").textContent=new URL("data/catalog/index.json",location.href).href;
+  try{
+    const r=await fetch("data/meta.json",{cache:"no-store"});
+    if(!r.ok)throw new Error("HTTP "+r.status);
+    const m=await r.json();
+    $("comets").textContent=(m.comet_count??0).toLocaleString();
+    $("details").textContent=(m.detail_file_count??0).toLocaleString();
+    $("shards").textContent=m.catalog_shards??64;
+    const ready=m.updated_at&&m.comet_count>0;
+    $("status").textContent=ready?"READY":"WAIT";
+    $("status").className="value "+(ready?"good":"wait");
+    $("updated").textContent=m.updated_at
+      ? new Date(m.updated_at).toLocaleString("ja-JP")
+      : "初回GitHub Actions実行待ち";
+  }catch(e){
+    $("status").textContent="ERROR";
+    $("status").className="value bad";
+    $("updated").textContent=String(e);
+  }
+})();
+</script>
+</body>
+</html>
