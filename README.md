@@ -4,8 +4,6 @@
 星の鳥は、JPL Small-Body Database (SBDB) の彗星データを定期的に取得し、
 GitHub Pages から静的 JSON として配信する Nicole 用データセットです。
 
-この版では Cloudflare D1 をデータベースとして使用しません。
-
 ## 構成
 
 ```text
