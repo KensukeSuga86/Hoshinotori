@@ -1,0 +1,51 @@
+Copyright © 2026 Kensuke Suga. All rights reserved.
+
+Hoshinotori / 星の鳥 and its original source code, database structure, processing logic,
+documentation, interface design, original text, and other original project materials are
+proprietary works of Kensuke Suga unless otherwise stated.
+
+Except for third-party data, services, software, and other materials separately identified
+in THIRD_PARTY_NOTICES.md or otherwise credited in the project, no permission is granted to
+copy, reproduce, modify, adapt, translate, distribute, publish, sublicense, sell, relicense,
+create derivative works from, or otherwise reuse the source code or substantial portions of
+this project without prior written permission from the copyright holder.
+
+Public availability of this repository does not constitute permission to reuse, modify,
+redistribute, or commercialize Hoshinotori / 星の鳥 or its original source code.
+
+Viewing, cloning, and forking this repository through GitHub remain subject to GitHub's Terms
+of Service. Such access does not grant any additional copyright license beyond what is
+expressly stated here.
+
+IMPORTANT — ASTRONOMICAL DATA
+
+Underlying astronomical data obtained from NASA/JPL or other external providers remains
+subject to the rights, terms, policies, attribution requirements, and conditions of those
+providers.
+
+No ownership is claimed over third-party astronomical data merely because it is stored,
+processed, reorganized, indexed, or displayed by Hoshinotori.
+
+Where applicable:
+
+Data source: NASA/JPL
+Database organization and processing: © 2026 Kensuke Suga
+
+This copyright notice applies to Hoshinotori's original selection, organization, software,
+processing logic, interface, documentation, and other original project materials, but does
+not override or restrict rights granted by third-party licenses or data-use terms.
+
+ASTRONOMICAL ACCURACY / NO WARRANTY
+
+Astronomical data and computed positions provided through Hoshinotori are intended for
+observational reference and informational use only. They should not be relied upon for
+navigation, safety-critical decisions, spacecraft operations, or other applications requiring
+independently verified precision.
+
+External data and services may be revised, corrected, rate-limited, interrupted, or changed
+by their providers.
+
+Permission requests may be directed to the copyright holder.
+
+This notice is intended to clarify the copyright status and permitted use of the project.
+It is not legal advice.
