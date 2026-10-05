@@ -31,7 +31,7 @@ Hoshinotori/
 
 ### data/catalog/index.json
 Nicole の検索用の軽量インデックスです。
-全彗星の名前・designation・SPK-ID・orbit_id・epoch・軌道分類などを持ちます。
+全彗星の名前・designation・SPK-ID・orbit_id・epoch・軌道分類に加え、`q / e / tp / i / om / w` の簡易軌道計算用要素を持ちます。これにより Nicole / Astrorium は64シャードを全取得せず、過去・未来日時の彗星候補を軽量に抽出できます。
 
 ### data/catalog/00.json ～ 3f.json
 基本軌道要素を 64 シャードに分割して保存します。
