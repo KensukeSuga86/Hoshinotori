@@ -60,6 +60,12 @@ def make_index(records):
             "class": r.get("class"),
             "orbit_id": r.get("orbit_id"),
             "epoch": r.get("epoch"),
+            "q": r.get("q"),
+            "e": r.get("e"),
+            "tp": r.get("tp"),
+            "i": r.get("i"),
+            "om": r.get("om"),
+            "w": r.get("w"),
             "detail": (COMETS / r["bucket"] / f'{r["spkid"]}.json').exists(),
         })
     return index
