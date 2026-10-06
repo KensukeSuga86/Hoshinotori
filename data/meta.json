@@ -5,7 +5,7 @@
   "jpl_reported_count": 4077,
   "last_update": {
     "added": 0,
-    "changed_files": 0,
+    "changed_files": 1,
     "orbit_changed": 0,
     "removed": 0
   },
@@ -19,5 +19,5 @@
   "source": "JPL Small-Body Database",
   "storage": "GitHub static JSON",
   "subtitle": "Comet Orbit Database for Nicole",
-  "updated_at": "2026-10-04T21:20:18Z"
+  "updated_at": "2026-10-06T12:28:20Z"
 }
