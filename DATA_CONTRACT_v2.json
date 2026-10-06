@@ -11,7 +11,15 @@
     "class": "string|null",
     "orbit_id": "string|null",
     "epoch": "number|null",
-    "detail": "boolean"
+    "detail": "boolean",
+    "q": "number|null",
+    "e": "number|null",
+    "tp": "number|null",
+    "i": "number|null",
+    "om": "number|null",
+    "w": "number|null",
+    "m1": "number|null",
+    "k1": "number|null"
   },
   "catalog_record": {
     "identity": [
@@ -68,6 +76,13 @@
       "t_jup",
       "moid",
       "moid_jup"
+    ],
+    "photometry": [
+      "M1",
+      "M2",
+      "K1",
+      "K2",
+      "PC"
     ]
   },
   "detail_record": {

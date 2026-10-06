@@ -66,6 +66,10 @@ def make_index(records):
             "i": r.get("i"),
             "om": r.get("om"),
             "w": r.get("w"),
+            # JPL comet total-magnitude parameters (T = M1 + 5 log10(delta) + K1 log10(r)).
+            # Null for comets without a published photometric model.
+            "m1": r.get("M1"),
+            "k1": r.get("K1"),
             "detail": (COMETS / r["bucket"] / f'{r["spkid"]}.json').exists(),
         })
     return index

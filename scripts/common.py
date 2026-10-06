@@ -29,7 +29,8 @@ CATALOG_FIELDS = [
     "source","soln_date","producer","data_arc","first_obs","last_obs",
     "n_obs_used","n_del_obs_used","n_dop_obs_used","two_body",
     "pe_used","sb_used","condition_code","rms",
-    "t_jup","moid","moid_jup"
+    "t_jup","moid","moid_jup",
+    "M1","M2","K1","K2","PC"
 ]
 
 NUMBER_FIELDS = {
@@ -37,7 +38,8 @@ NUMBER_FIELDS = {
     "sigma_e","sigma_a","sigma_q","sigma_i","sigma_om","sigma_w",
     "sigma_ma","sigma_tp","sigma_per","sigma_n","sigma_ad",
     "data_arc","n_obs_used","n_del_obs_used","n_dop_obs_used",
-    "condition_code","rms","t_jup","moid","moid_jup"
+    "condition_code","rms","t_jup","moid","moid_jup",
+    "M1","M2","K1","K2","PC"
 }
 
 def utc_now_iso() -> str:
