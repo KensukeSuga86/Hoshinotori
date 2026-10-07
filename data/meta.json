@@ -1,11 +1,11 @@
 {
   "catalog_shards": 64,
-  "comet_count": 4077,
+  "comet_count": 4078,
   "detail_file_count": 0,
-  "jpl_reported_count": 4077,
+  "jpl_reported_count": 4078,
   "last_update": {
-    "added": 0,
-    "changed_files": 0,
+    "added": 1,
+    "changed_files": 2,
     "orbit_changed": 0,
     "removed": 0
   },
@@ -19,5 +19,5 @@
   "source": "JPL Small-Body Database",
   "storage": "GitHub static JSON",
   "subtitle": "Comet Orbit Database for Nicole",
-  "updated_at": "2026-10-06T18:54:20Z"
+  "updated_at": "2026-10-07T18:56:34Z"
 }
