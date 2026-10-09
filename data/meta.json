@@ -4,9 +4,9 @@
   "detail_file_count": 0,
   "jpl_reported_count": 4080,
   "last_update": {
-    "added": 2,
-    "changed_files": 4,
-    "orbit_changed": 1,
+    "added": 0,
+    "changed_files": 39,
+    "orbit_changed": 55,
     "removed": 0
   },
   "name": "星の鳥",
@@ -19,5 +19,5 @@
   "source": "JPL Small-Body Database",
   "storage": "GitHub static JSON",
   "subtitle": "Comet Orbit Database for Nicole",
-  "updated_at": "2026-10-08T18:56:33Z"
+  "updated_at": "2026-10-09T18:55:16Z"
 }
